@@ -10,7 +10,7 @@ package package2;
  * @author Ryan
  */
 public class Agent {
-    private QueueFIFO queue = new QueueFIFO();
+    private QueueFIFO frontier = new QueueFIFO();
     
     public Agent(){
         

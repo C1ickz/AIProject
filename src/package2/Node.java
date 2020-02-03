@@ -13,43 +13,50 @@ import java.util.Arrays;
  * @author ryanharris
  */
 public class Node {
+    
     private State state;
     private Node parent =null;
     private Action action;
     private int pathCost;
-    private ArrayList<Node> childNodes;
+    private ArrayList<Node> childNodes = new ArrayList<>();
     
     
-    public Node(Action action, int pathCost){
-        this.action=action;
-        this.pathCost = pathCost;
+    public Node(State state){
+        this.state=state;
     }
     
     
-    public Node(Action action, Node parent, int pathCost){
+    public Node(State state, Action action, int pathCost){
         this.action = action;
-        this.setParent(parent);
+        this.state = state;
         this.pathCost = pathCost;
-        childNodes = new ArrayList<Node>();
     
     }
-    
-    public void addChild(Action action, int pathCost){
-        Node child = new Node(action, this, pathCost);
+    public void addChild(Node child){
         child.setParent(this);
+        this.childNodes.add(child);
+    }
+    public void addChild(State state, Action action, int pathCost){
+        Node child = new Node(state,action,pathCost);
+        this.addChild(child);
     }
     
-    public String getChildren(){
-        return Arrays.toString(this.childNodes.toArray());
+    public ArrayList<Node> getChildren(){
+        return childNodes;
     }
-    
+
     public void setParent(Node parent){
         this.parent = parent;
-    
+    }
+    public Action getAction(){
+        return action;
+    }
+    public State getState(){
+        return state;
     }
     
-    public Action getAction(Action action){
-        return action;
+    public int getPathCost(){
+        return pathCost;
     }
 
     public void setAction(Action action){
@@ -58,9 +65,22 @@ public class Node {
     
     
     public static void main(String[] args){
-        Node parentNode1 = new Node(new Action("Parent"),1 );
-        parentNode1.addChild(new Action("childNode"),1);
-        parentNode1.addChild(new Action("childNode"),1);
+        
+        Node root = new Node(new State("331000"));//Initial State
+        
+        Node child1 = new Node(new State("310102"), new Action("row#02"),1);
+        child1.addChild(new State("321001"), new Action("row#01"),1);
+        child1.addChild(new State("300102"), new Action("row#02"),1);
+        
+        Node child2 = new Node(new State("220111"), new Action("row#11"), 1);
+        child2.addChild(new State("321001"), new Action("row#10"),1 );
+        root.addChild(child1);
+        root.addChild(child2);
+        
+        for(Node node: root.getChildren()){
+            System.out.println(node.getState());
+        }
+
 
 
     }
