@@ -1,7 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Ryan Harris and Aj Hammond
+ * 02-03-2020
  */
 package package2;
 
@@ -21,12 +20,13 @@ public class ValidityChecker {
      * @param puzzle array of two strings that the user inputted (processed in MainFrame.java)
      * @return String to user whether or not input was valid
      */
+    
+    InputParser parser = new InputParser();
     public String check8puzzle(String input){
         
         //current state is first nine digits desired state is next 9 digits
         //Ex. 8puzzle#currentState#desiredState
-        
-        String[] hash = parseInput(input);
+        String[] hash = InputParser.parseInput(input);
         String currentState = hash[0];
         String desiredState = hash[1];
         String[] range = {"0","1","2","3","4","5","6","7","8"}; //range of numbers that can be used in 8puzzle
@@ -57,7 +57,7 @@ public class ValidityChecker {
     
     
     public String checkMC(String input){
-        String[] hash = parseInput(input);
+        String[] hash = InputParser.parseInput(input);
         String currentState = hash[0];
         String desiredState = hash[1]; 
         
@@ -72,44 +72,5 @@ public class ValidityChecker {
     
     
     
-    public String[] parseInput(String puzzle) {
-        TextField outputArea;
-        String input;
-        String[] inputArr;
 
-        
-        if(puzzle.startsWith("8puzzle#")){
-            //parse input here
-            input = puzzle.replace("8puzzle#", "").replace("#", " ");
-            inputArr = input.split(" ");
-            
-        
-            if(inputArr.length == 2){
-                return inputArr;
-            }
-      
-            else{
-                System.out.println("Make sure puzzle is in form 8puzzle#XXXXXXXXX#XXXXXXXXX");
-            }
-        }
-        
-  
-        else if(puzzle.startsWith("M&C#")){
-            input = puzzle.replace("M&C#", "").replace("#", " ");
-            inputArr = input.split(" ");
-            
-        
-
-            if(inputArr.length == 2){
-                return inputArr;
-         
-            }
-            else{
-                System.out.println("Make sure puzzle is in form M&C#000000#000000");
-            }
-        }
-        
-        return null;
-        
-    }
 }

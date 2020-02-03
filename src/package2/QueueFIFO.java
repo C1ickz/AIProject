@@ -1,7 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Ryan Harris and Aj Hammond
+ * 02-03-2020
  */
 package package2;
 
@@ -31,6 +30,10 @@ public class QueueFIFO<T>{
         
         list.remove(0);
    
+    }
+    
+    public void clear(){
+        list.clear();
     }
    
     public boolean isEmpty(){

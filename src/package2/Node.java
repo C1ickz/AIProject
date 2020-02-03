@@ -1,7 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Ryan Harris and Aj Hammond
+ * 02-03-2020
  */
 package package2;
 
@@ -35,6 +34,7 @@ public class Node {
     public void addChild(Node child){
         child.setParent(this);
         this.childNodes.add(child);
+        
     }
     public void addChild(State state, Action action, int pathCost){
         Node child = new Node(state,action,pathCost);
@@ -45,12 +45,22 @@ public class Node {
         return childNodes;
     }
 
+    public void setState(State state){
+        this.state = state;
+    }
+    
     public void setParent(Node parent){
         this.parent = parent;
     }
+    
+    public Node getParent(){
+        return parent;
+    }
+    
     public Action getAction(){
         return action;
     }
+    
     public State getState(){
         return state;
     }
@@ -80,8 +90,6 @@ public class Node {
         for(Node node: root.getChildren()){
             System.out.println(node.getState());
         }
-
-
 
     }
 }
