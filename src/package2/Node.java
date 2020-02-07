@@ -14,44 +14,63 @@ import java.util.Arrays;
 public class Node {
     
     private State state;
-    private Node parent =null;
+    private Node parent;
     private Action action;
     private int pathCost;
-    private ArrayList<Node> childNodes = new ArrayList<>();
+    private int depth;
     
-    
+    //Constructor for the root node
     public Node(State state){
         this.state=state;
+        this.parent = null;
     }
     
     
-    public Node(State state, Action action, int pathCost){
+    public Node(State state, Node parent, Action action, int pathCost){
         this.action = action;
         this.state = state;
+        this.parent = parent;
         this.pathCost = pathCost;
     
     }
-    public void addChild(Node child){
-        child.setParent(this);
-        this.childNodes.add(child);
+    
+    public Sequence getSolution(){
+        ArrayList<Action> answer = new ArrayList<>();
+        Node temp = this;
+        Action theAction = temp.getAction();
+        do{
+            if(theAction!= null){
+                answer.add(theAction);
+                temp = temp.getParentNode();
+                if(temp == null){
+                    theAction = null;
+                }
+                else{
+                    theAction = temp.getAction();
+                }
+            }
+            
+        }
+        while(theAction!=null);
+        return new Sequence(answer);
+    }
+    
+    @Override
+    public String toString(){
+        String result = " Node:\nstate " + state;
+        result+= "\naction: " + action;
+        result+= "\n path cost:" + pathCost;
+        
+        return result;
+        
         
     }
-    public void addChild(State state, Action action, int pathCost){
-        Node child = new Node(state,action,pathCost);
-        this.addChild(child);
-    }
     
-    public ArrayList<Node> getChildren(){
-        return childNodes;
+    public Node getParentNode(){
+        return this.parent;
     }
+            
 
-    public void setState(State state){
-        this.state = state;
-    }
-    
-    public void setParent(Node parent){
-        this.parent = parent;
-    }
     
     public Node getParent(){
         return parent;
@@ -69,27 +88,18 @@ public class Node {
         return pathCost;
     }
 
-    public void setAction(Action action){
-        this.action = action;  
-    }
     
     
     public static void main(String[] args){
         
         Node root = new Node(new State("331000"));//Initial State
         
-        Node child1 = new Node(new State("310102"), new Action("row#02"),1);
-        child1.addChild(new State("321001"), new Action("row#01"),1);
-        child1.addChild(new State("300102"), new Action("row#02"),1);
+        Node child1 = new Node(new State("310102"), root,new Action("row#02"),1);
+        System.out.println(child1.toString());
+ 
+
         
-        Node child2 = new Node(new State("220111"), new Action("row#11"), 1);
-        child2.addChild(new State("321001"), new Action("row#10"),1 );
-        root.addChild(child1);
-        root.addChild(child2);
-        
-        for(Node node: root.getChildren()){
-            System.out.println(node.getState());
-        }
+
 
     }
 }

@@ -14,19 +14,38 @@ import java.util.Arrays;
  * @author ryanharris
  */
 public class Sequence {
-    private ArrayList<State> actionsTaken;
+    private ArrayList<Action> actionsTaken;
 
+    
     public Sequence(){
         actionsTaken = new ArrayList<>();
     }
     
-    public void add(State state)
+    public Sequence(ArrayList<Action> actionsTaken){
+        this.actionsTaken = actionsTaken;
+    }
+    
+    public void add(Action state)
     {
         actionsTaken.add(state);
     }  
     
-    public ArrayList<State> getSequence(ArrayList<State> sequence){
+    public ArrayList<Action> getSequence(ArrayList<Action> sequence){
         return sequence;
+    }
+    
+    public Action getFirst(){
+        if(actionsTaken == null || actionsTaken.isEmpty()){
+            return null;
+        }
+        //actionsTaken.get(0)
+        else{
+        return actionsTaken.get(actionsTaken.size() -1);
+        }
+    }
+    public void remove(){
+        
+        actionsTaken.remove(actionsTaken.size() -1);
     }
     
     @Override
@@ -34,7 +53,7 @@ public class Sequence {
         return Arrays.toString(actionsTaken.toArray());
     }
     
-    
+    //return the sequence of actions
     public static void main(String[] args){
         Sequence actions = new Sequence();
         for(int i = 0; i <= 10; i++){
@@ -46,7 +65,7 @@ public class Sequence {
             }
         }
         System.out.println(actions.toString());
-
+       
         
     }
     

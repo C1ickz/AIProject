@@ -61,14 +61,19 @@ public class ValidityChecker {
         String currentState = hash[0];
         String desiredState = hash[1]; 
         
-        if(currentState.equals(new StringBuilder(desiredState).reverse().toString())){
-            return "Puzzle is valid";
+        if(currentState.length() == 6 && desiredState.length() == 6){
+            if(currentState.equals(new StringBuilder(desiredState).reverse().toString())){
+                return "Puzzle is valid";
+            }
         }
         else{
             return "Puzzle is not valid";
         }
  
     }
+    
+    
+   
     
     
     

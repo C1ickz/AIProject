@@ -1,11 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="759f9c26-c695-4242-8d1e-76f05b946107" name="Default Changelist" comment="" />
+    <list default="true" id="759f9c26-c695-4242-8d1e-76f05b946107" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/AiProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/basic_ai/ValidityChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/basic_ai/ValidityChecker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/Action.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/Action.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/Agent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/InputParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/InputParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/MCProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/MCProblem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/MainFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/MainFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/MainFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/MainFrame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/MainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/Percept.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/Percept.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/QueueFIFO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/QueueFIFO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/Sequence.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/Sequence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/State.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/ValidityChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/ValidityChecker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/package2/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/package2/Action.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/package2/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/package2/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/package2/MCProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/package2/MCProblem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/package2/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/package2/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/package2/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/package2/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/package2/Sequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/package2/Sequence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/package2/ValidityChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/package2/ValidityChecker.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1WRNZUrYYBAqsiwRjjA84LT7I3Z" />
   <component name="ProjectViewState">
@@ -15,9 +50,20 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="AiProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -42,10 +88,42 @@
       <option name="presentableId" value="Default" />
       <updated>1579108502098</updated>
       <workItem from="1579108503299" duration="29000" />
+      <workItem from="1581092888710" duration="209000" />
+      <workItem from="1581093953280" duration="22000" />
+      <workItem from="1581093996478" duration="583000" />
+      <workItem from="1581096391823" duration="166000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="520" y="178" key="#Unnamed" timestamp="1581096550135">
+      <screen x="0" y="23" width="1680" height="944" />
+    </state>
+    <state x="520" y="178" key="#Unnamed/0.23.1680.944@0.23.1680.944" timestamp="1581096550135" />
+    <state x="303" y="157" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581096417140">
+      <screen x="0" y="23" width="1680" height="944" />
+    </state>
+    <state x="303" y="157" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.944@0.23.1680.944" timestamp="1581096417140" />
+    <state x="303" y="158" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.949@0.23.1680.949" timestamp="1581093030489" />
+    <state x="581" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1581096537502">
+      <screen x="0" y="23" width="1680" height="944" />
+    </state>
+    <state x="581" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog/0.23.1680.944@0.23.1680.944" timestamp="1581096537502" />
+    <state x="693" y="420" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1581096466580">
+      <screen x="0" y="23" width="1680" height="944" />
+    </state>
+    <state x="693" y="420" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.1680.944@0.23.1680.944" timestamp="1581096466580" />
+    <state x="516" y="327" key="com.intellij.ide.util.TipDialog" timestamp="1581093995907">
+      <screen x="0" y="23" width="1680" height="944" />
+    </state>
+    <state x="516" y="327" key="com.intellij.ide.util.TipDialog/0.23.1680.944@0.23.1680.944" timestamp="1581093995907" />
+    <state x="516" y="329" key="com.intellij.ide.util.TipDialog/0.23.1680.949@0.23.1680.949" timestamp="1581092888754" />
+    <state x="216" y="81" key="new project wizard" timestamp="1581094095021">
+      <screen x="0" y="23" width="1680" height="944" />
+    </state>
+    <state x="216" y="81" key="new project wizard/0.23.1680.944@0.23.1680.944" timestamp="1581094095021" />
   </component>
 </project>

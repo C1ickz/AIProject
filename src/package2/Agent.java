@@ -18,7 +18,15 @@ public class Agent {
     private InputParser parser = new InputParser();
     
     
-    
+        public Action simple_problem_solving_agent(Percept percept){
+        state = update_state(state, percept);
+        if(seq == null){
+            goal = formulate_goal(state);
+            problem = formulate_problem(state,goal);
+            seq = seaarach(proboem);
+            if(seq)
+        }
+    }
     
     public Agent(){}
     
@@ -94,8 +102,12 @@ public class Agent {
     
     public String bfs(Node root){
         frontier = new QueueFIFO();
-        Node node = root;
-   
+        QueueFIFO explored = new QueueFIFO();
+        //Node node = root;
+        Node node = new Node(problem.getInitialState());
+        if(problem.goalTest(node.getState()){
+            return node.getSolution();
+        }
         frontier.clear();
         frontier.insert(root);
         while(!frontier.isEmpty()){
