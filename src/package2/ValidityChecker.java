@@ -69,7 +69,16 @@ public class ValidityChecker {
         else{
             return "Puzzle is not valid";
         }
+        return null;
  
+    }
+    
+    
+    public static void main(String[] args){
+        ValidityChecker checker = new ValidityChecker();
+        System.out.println(checker.checkMC("M&C#331000#000133"));
+        System.out.println(checker.checkMC("M&C#33100#000133"));
+
     }
     
     
