@@ -41,61 +41,15 @@ public class Agent {
         return true;
         }
         
-        
-    public Node nextStates(State state){
-        String[] possibleActions = {"row#11", "row#02", "row#20", "row#01", "row#10"};
-        Integer[][] actions = new Integer[possibleActions.length][2]; //create a 6x2 array 
-        Integer[] stateAsArr = state.toIntArr();
-        System.out.println(Arrays.toString(stateAsArr));
-        for(int i = 0; i < possibleActions.length;i++){
-           actions[i] = parser.actionParser(possibleActions[i]);
+
+    private Node childNode(MCProblem problem, Node parent, Action action){
+        State childState = problem.result(parent.getState(),action);
+        if(childState == null){
+            return null;
         }
-        System.out.println(actions[3][0]);
-        
-        boolean looped = false;
-        for(int i = 0; i< possibleActions.length; i++){
-            for(int j = 0; j < 1;j++){
-                 if(isValidState(stateAsArr[0],stateAsArr[1],stateAsArr[4],stateAsArr[5]) == false){
-                //move to right
-                if(looped == false){
-                    stateAsArr[2] -= 1;
-                    stateAsArr[3] += 1;
-                    stateAsArr[4] += actions[i][j];
-                    stateAsArr[5] += actions[i][j+1];
-                    stateAsArr[0] -= actions[i][j];
-                    stateAsArr[1] -= actions[i][j + 1];
-
-
-                }
-           
-                //move to left
-                else if(looped){
-                    stateAsArr[2] += 1;
-                    stateAsArr[3] -= 1;
-                    stateAsArr[0] += actions[i][j];
-                    stateAsArr[1] += actions[i][j];
-                    stateAsArr[4] -= actions[i][j];
-                    stateAsArr[5] -= actions[i][j];
-
-                }
-                
-                for(Integer why: stateAsArr){
-                    System.out.print(why);
-                }
-                System.out.println("\n");
-
-
-                looped = !looped; //looped is equal to the inverse of itslef
-               
-                 }
-                }
-            }
-        
-   
-        
-        return null;
+        Node childNode = new Node(childState, parent,action, 1);
+        return childNode;
     }
-    
     
     
     
@@ -112,7 +66,7 @@ public class Agent {
         frontier.insert(root);
         while(!frontier.isEmpty()){
             frontier.pop();
-            explored.add(node.getState());
+            explored.insert(node.getState());
         }
         
         

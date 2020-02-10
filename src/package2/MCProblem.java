@@ -94,8 +94,10 @@ public class MCProblem {
 
                     if(!(numMissonariesToMove + numCannibalsToMove > 2) && numMissonariesToMove + numCannibalsToMove > 0){
                         if(leftCannibals >= 0 && leftMissonaries >= 0){
-                            tempAction = new Action("row#" + Integer.toString(numMissonariesToMove) + Integer.toString(numCannibalsToMove));
-                            theResult.add(tempAction);
+                            if(leftMissonaries >= leftCannibals){
+                                tempAction = new Action("row#" + Integer.toString(numMissonariesToMove) + Integer.toString(numCannibalsToMove));
+                                theResult.add(tempAction);
+                            }
                         }
                     }
                 }
@@ -111,15 +113,18 @@ public class MCProblem {
 
                     if(!(numMissonariesToMove + numCannibalsToMove > 2) && numMissonariesToMove + numCannibalsToMove > 0){
                         if(rightCannibals >= 0 && rightMissonaries >= 0){
-                            tempAction = new Action("row#" + Integer.toString(numMissonariesToMove) + Integer.toString(numCannibalsToMove));
-                            theResult.add(tempAction);
+                            if(rightMissonaries >= rightCannibals){
+                                tempAction = new Action("row#" + Integer.toString(numMissonariesToMove) + Integer.toString(numCannibalsToMove));
+                                theResult.add(tempAction);
                         }
                     }
                 }
             }
 
-            return theResult;
     }
+    return theResult;
+
+}
 
     public static State result(State s, Action a){
         if(a == null || a.toString() == null){

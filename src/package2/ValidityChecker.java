@@ -57,6 +57,9 @@ public class ValidityChecker {
     
     
     public String checkMC(String input){
+        //Check if M&C
+        //Check that it uses ints
+        //Only characters 0 through 9
         String[] hash = InputParser.parseInput(input);
         String currentState = hash[0];
         String desiredState = hash[1]; 
