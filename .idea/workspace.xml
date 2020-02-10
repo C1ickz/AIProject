@@ -2,37 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="759f9c26-c695-4242-8d1e-76f05b946107" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/AiProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/basic_ai/ValidityChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/basic_ai/ValidityChecker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/built-jar.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/built-jar.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/.netbeans_automatic_build" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/.netbeans_update_resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/basic_ai/ValidityChecker.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/package2/Action.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/Action.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/Agent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/InputParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/InputParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/Agent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/InputParser.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/package2/MCProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/MCProblem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/MainFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/MainFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/MainFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/MainFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/MainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/MainFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/MainFrame$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/MainFrame$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/MainFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/MainFrame.form" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/package2/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/Percept.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/Percept.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/QueueFIFO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/QueueFIFO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/Sequence.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/Sequence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/Percept.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/Problem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/QueueFIFO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/Sequence.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/package2/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/State.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/ValidityChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/ValidityChecker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/package2/ValidityChecker.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/package2/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/package2/Action.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/package2/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/package2/Agent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/package2/MCProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/package2/MCProblem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/package2/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/package2/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/package2/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/package2/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/package2/Sequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/package2/Sequence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/package2/ValidityChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/package2/ValidityChecker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +91,7 @@
       <workItem from="1581093953280" duration="22000" />
       <workItem from="1581093996478" duration="583000" />
       <workItem from="1581096391823" duration="166000" />
+      <workItem from="1581309362247" duration="745000" />
     </task>
     <servers />
   </component>
@@ -112,9 +112,10 @@
       <screen x="0" y="23" width="1680" height="944" />
     </state>
     <state x="581" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog/0.23.1680.944@0.23.1680.944" timestamp="1581096537502" />
-    <state x="693" y="420" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1581096466580">
-      <screen x="0" y="23" width="1680" height="944" />
+    <state x="1056" y="589" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1581310692195">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="1056" y="589" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1581310692195" />
     <state x="693" y="420" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.1680.944@0.23.1680.944" timestamp="1581096466580" />
     <state x="516" y="327" key="com.intellij.ide.util.TipDialog" timestamp="1581093995907">
       <screen x="0" y="23" width="1680" height="944" />

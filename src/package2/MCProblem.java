@@ -6,6 +6,7 @@
 package package2;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -38,27 +39,87 @@ public class MCProblem {
        // ArrayList<Action> allActions = actiosn(state);
     }
        
+    public static String[] getAllLists(String[] elements, int lengthOfList )
+    {
 
 
-public ArrayList<Action> actions(State s){
-           
-        int leftMissonaries = Integer.parseInt(""+s.toString().charAt(0));
-        int leftCannibals = Integer.parseInt(""+s.toString().charAt(1));
-        int leftBoat = Integer.parseInt(""+s.toString().charAt(2));
-        int rightBoat = Integer.parseInt(""+s.toString().charAt(3));
-        int rightMissonaries = Integer.parseInt(""+s.toString().charAt(4));
-        int rightCannibals = Integer.parseInt(""+s.toString().charAt(5));
-        ArrrayList<Action> theResult = new ArrayList<>();
-        Action tempAction = null;
-        
-        if(leftBoat ==1 && rightBoat == 0){
-            
-            
+        if(lengthOfList == 1) return elements; 
+        else {
+            //initialize our returned list with the number of elements calculated above
+            String[] allLists = new String[(int)Math.pow(elements.length, lengthOfList)];
+
+            //the recursion--get all lists of length 3, length 2, all the way up to 1
+            String[] allSublists = getAllLists(elements, lengthOfList - 1);
+
+            //append the sublists to each element
+            int arrayIndex = 0;
+
+            for(int i = 0; i < elements.length; i++){
+                for(int j = 0; j < allSublists.length; j++){
+                    //add the newly appended combination to the list
+                    allLists[arrayIndex] = elements[i] + allSublists[j];
+                    arrayIndex++;
+                }
+            }
+            return allLists;
         }
-        else if(leftBoat ==0 && rightBoat == 1)
-            
-            return null;
-}
+    }
+    
+
+
+    public static ArrayList<Action> actions(State s){
+
+            int leftMissonaries = Integer.parseInt(""+s.toString().charAt(0));
+            int leftCannibals = Integer.parseInt(""+s.toString().charAt(1));
+            int leftBoat = Integer.parseInt(""+s.toString().charAt(2));
+            int rightBoat = Integer.parseInt(""+s.toString().charAt(3));
+            int rightMissonaries = Integer.parseInt(""+s.toString().charAt(4));
+            int rightCannibals = Integer.parseInt(""+s.toString().charAt(5));
+            int numMissonariesToMove;
+            int numCannibalsToMove;
+            String[] possibleMoves = {"0","1","2"};
+            String[] combonations =  getAllLists(possibleMoves, possibleMoves.length -1);
+            ArrayList<Action> theResult = new ArrayList<>();
+            Action tempAction = null;
+
+            if(leftBoat ==1 ){
+
+                for(String combo: combonations){
+                    leftMissonaries = Integer.parseInt(""+s.toString().charAt(0));
+                    leftCannibals = Integer.parseInt(""+s.toString().charAt(1));
+                    numMissonariesToMove = Integer.parseInt(""+combo.charAt(0));
+                    numCannibalsToMove = Integer.parseInt(""+combo.charAt(1));
+                    leftMissonaries -= numMissonariesToMove;
+                    leftCannibals -= numCannibalsToMove;
+
+                    if(!(numMissonariesToMove + numCannibalsToMove > 2) && numMissonariesToMove + numCannibalsToMove > 0){
+                        if(leftCannibals >= 0 && leftMissonaries >= 0){
+                            tempAction = new Action("row#" + Integer.toString(numMissonariesToMove) + Integer.toString(numCannibalsToMove));
+                            theResult.add(tempAction);
+                        }
+                    }
+                }
+            }
+            else if(rightBoat ==1){
+                for(String combo: combonations){
+                    rightMissonaries = Integer.parseInt(""+s.toString().charAt(4));
+                    rightCannibals = Integer.parseInt(""+s.toString().charAt(5));
+                    numMissonariesToMove = Integer.parseInt(""+combo.charAt(0));
+                    numCannibalsToMove = Integer.parseInt(""+combo.charAt(1));
+                    rightMissonaries -= numMissonariesToMove;
+                    rightCannibals -= numCannibalsToMove;
+
+                    if(!(numMissonariesToMove + numCannibalsToMove > 2) && numMissonariesToMove + numCannibalsToMove > 0){
+                        if(rightCannibals >= 0 && rightMissonaries >= 0){
+                            tempAction = new Action("row#" + Integer.toString(numMissonariesToMove) + Integer.toString(numCannibalsToMove));
+                            theResult.add(tempAction);
+                        }
+                    }
+                }
+            }
+
+            return theResult;
+    }
 
     public static State result(State s, Action a){
         if(a == null || a.toString() == null){
@@ -77,13 +138,7 @@ public ArrayList<Action> actions(State s){
         
         
         if(leftBoat == 1){
-            leftMissonaries -= numMissonariesToMove;
-            leftCannibals -= numCannibalsToMove;
-            //same with cannibals
-            leftBoat = 0;
-            rightBoat = 1;
-            rightMissonaries += numMissonariesToMove;
-            rightCannibals += numCannibalsToMove;
+        
         }
 
         else if(rightBoat ==1){
@@ -104,12 +159,9 @@ public ArrayList<Action> actions(State s){
       }
   
         
-        return new State(data);
-
-
-
-      
+        return new State(data);  
     }
+    
     public void tryOneGoalTest(String stateString){
         State state = new State(stateString);
         boolean goalReached = goalTest(state);
@@ -148,8 +200,22 @@ public ArrayList<Action> actions(State s){
         //testProblem.testActions();
         //testProblem.testResult();
         testProblem.testGoalTest();
-        System.out.println("End of test for ProblemMC class");
         State state = result(startState, new Action("row#10"));
-        System.out.println(state.toString());
+        System.out.println("================================================================================");
+        ArrayList<Action> actionList = actions(new State("331000"));
+        System.out.println("Possible actions for state 331000 " + Arrays.toString(actionList.toArray()));
+        
+        actionList = actions(new State("101023"));
+        System.out.println("Possible actions for state 101023 " + Arrays.toString(actionList.toArray()));
+        
+        actionList = actions(new State("110121"));
+        System.out.println("Possible actions for state 110121 " + Arrays.toString(actionList.toArray()));
+        
+        actionList = actions(new State("000133"));
+        System.out.println("Possible actions for state 000133 " + Arrays.toString(actionList.toArray()));
+
+        System.out.println("End of test for ProblemMC class");
+
+
     }
 }

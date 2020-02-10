@@ -58,10 +58,10 @@ public class Sequence {
         Sequence actions = new Sequence();
         for(int i = 0; i <= 10; i++){
             if(i % 2 == 0){
-                actions.add(new State("Left"));
+                actions.add(new Action("Left"));
             }
             else{
-                actions.add(new State("Right"));
+                actions.add(new Action("Right"));
             }
         }
         System.out.println(actions.toString());
