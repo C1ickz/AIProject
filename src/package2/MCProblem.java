@@ -144,7 +144,13 @@ public class MCProblem {
         
         
         if(leftBoat == 1){
-        
+            leftMissonaries -= numMissonariesToMove;
+            leftCannibals -= numCannibalsToMove;
+            //same with cannibals
+            leftBoat = 0;
+            rightBoat = 1;
+            rightMissonaries += numMissonariesToMove;
+            rightCannibals += numCannibalsToMove;
         }
 
         else if(rightBoat ==1){

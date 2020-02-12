@@ -14,9 +14,9 @@ public class Agent {
     private Node root = new Node(new State("331000"));
     private State goal = new State("000133");
     private Sequence explored = new Sequence();
-    private QueueFIFO frontier;
     private InputParser parser = new InputParser();
     private MCProblem problem = new MCProblem(new State("331000"), new State("331000"));
+    State childState = null;
     
     
 //        public Action simple_problem_solving_agent(Percept percept){
@@ -35,12 +35,11 @@ public class Agent {
         
 
     private Node childNode(MCProblem problem, Node parent, Action action){
-        State childState = problem.result(parent.getState(),action);
-        if(childState == null){
-            return null;
-        }
+        //System.out.println(childState.toString());
+  
         int pathCost = parent.getPathCost() + problem.step_cost(parent.getState(),action);
-        Node childNode = new Node(childState, parent,action, 1);
+        Node childNode = new Node(problem.result(parent.getState(),action), parent,action, pathCost);
+        //System.out.println(parent.getState());
         return childNode;
     }
     
@@ -48,27 +47,34 @@ public class Agent {
     
     
     public Sequence bfs(Node root){
-        frontier = new QueueFIFO();
-        QueueFIFO explored = new QueueFIFO();
+        QueueFIFO<Node> frontier = new QueueFIFO<>();
+        QueueFIFO<State> explored = new QueueFIFO<>();
         //Node node = root;
         Node node = new Node(problem.getInitialState());
-        if(problem.goalTest(new State("Yes"))){
+        Node child =null;
+        if(problem.goalTest(goal)){
             return node.getSolution();
         }
-        frontier.clear();
         frontier.insert(root);
+        explored.insert(root.getState());
         while(!frontier.isEmpty()){
+            node = frontier.getNode();
             frontier.pop();
             explored.insert(node.getState());
             for(Action action: problem.actions(node.getState())){
-                Node child = childNode(problem, node,action);
-                if(!(explored.contains(child.getState()) || frontier.contains(child.getState()))){
+                //System.out.println(action);
+                child = childNode(problem, node,action);
+                if(!explored.contains(child.getState()) || !frontier.contains(child)){
                     if(problem.goalTest(child.getState())){
                         return child.getSolution();
                     }
-                    frontier.insert(child);
                 }
+                System.out.println(child.toString());
+                frontier.insert(child);
+
             }
+                           
+
         }
         
         
@@ -80,7 +86,8 @@ public class Agent {
     public static void main(String[] args){
         Node node = new Node(new State("331000"));
         Agent agent = new Agent();
-        agent.bfs(node)
+        Sequence hi = agent.bfs(node);
+        System.out.println(hi.toString());
         
     }
 }
