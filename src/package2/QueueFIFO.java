@@ -31,7 +31,9 @@ public class QueueFIFO<T>{
         list.remove(0);
    
     }
-    
+    public boolean contains(T s){
+        return list.contains(s.toString());
+    }
     public void clear(){
         list.clear();
     }

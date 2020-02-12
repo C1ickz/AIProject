@@ -16,30 +16,22 @@ public class Agent {
     private Sequence explored = new Sequence();
     private QueueFIFO frontier;
     private InputParser parser = new InputParser();
+    private MCProblem problem = new MCProblem(new State("331000"), new State("331000"));
     
     
-        public Action simple_problem_solving_agent(Percept percept){
-        state = update_state(state, percept);
-        if(seq == null){
-            goal = formulate_goal(state);
-            problem = formulate_problem(state,goal);
-            seq = seaarach(proboem);
-            if(seq)
-        }
-    }
+//        public Action simple_problem_solving_agent(Percept percept){
+//        state = update_state(state, percept);
+//        if(seq == null){
+//            goal = formulate_goal(state);
+//            problem = formulate_problem(state,goal);
+//            seq = seaarach(proboem);
+//            if(seq)
+//        }
+//    }
     
     public Agent(){}
     
-    	public boolean isValidState(int misLeft, int canLeft, int misRight, int canRight ){
-        if((0 < misLeft && 0 < canLeft) || 0 < misRight && 0< canRight){
-                return false;	
-        }
-
-        if(misLeft <0 ||canLeft<0 || misRight<0 || canRight<0){
-                return false;
-        }
-        return true;
-        }
+  
         
 
     private Node childNode(MCProblem problem, Node parent, Action action){
@@ -47,6 +39,7 @@ public class Agent {
         if(childState == null){
             return null;
         }
+        int pathCost = parent.getPathCost() + problem.step_cost(parent.getState(),action);
         Node childNode = new Node(childState, parent,action, 1);
         return childNode;
     }
@@ -54,12 +47,12 @@ public class Agent {
     
     
     
-    public String bfs(Node root){
+    public Sequence bfs(Node root){
         frontier = new QueueFIFO();
         QueueFIFO explored = new QueueFIFO();
         //Node node = root;
         Node node = new Node(problem.getInitialState());
-        if(problem.goalTest(node.getState()){
+        if(problem.goalTest(new State("Yes"))){
             return node.getSolution();
         }
         frontier.clear();
@@ -67,6 +60,15 @@ public class Agent {
         while(!frontier.isEmpty()){
             frontier.pop();
             explored.insert(node.getState());
+            for(Action action: problem.actions(node.getState())){
+                Node child = childNode(problem, node,action);
+                if(!(explored.contains(child.getState()) || frontier.contains(child.getState()))){
+                    if(problem.goalTest(child.getState())){
+                        return child.getSolution();
+                    }
+                    frontier.insert(child);
+                }
+            }
         }
         
         
@@ -78,6 +80,7 @@ public class Agent {
     public static void main(String[] args){
         Node node = new Node(new State("331000"));
         Agent agent = new Agent();
-        Node found= agent.nextStates(node.getState());
+        agent.bfs(node)
+        
     }
 }

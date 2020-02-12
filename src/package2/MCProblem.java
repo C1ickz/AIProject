@@ -69,18 +69,19 @@ public class MCProblem {
 
     public static ArrayList<Action> actions(State s){
 
-            int leftMissonaries = Integer.parseInt(""+s.toString().charAt(0));
-            int leftCannibals = Integer.parseInt(""+s.toString().charAt(1));
+            int leftMissonaries;
+            int leftCannibals;
+            int rightMissonaries;
+            int rightCannibals;
             int leftBoat = Integer.parseInt(""+s.toString().charAt(2));
             int rightBoat = Integer.parseInt(""+s.toString().charAt(3));
-            int rightMissonaries = Integer.parseInt(""+s.toString().charAt(4));
-            int rightCannibals = Integer.parseInt(""+s.toString().charAt(5));
             int numMissonariesToMove;
             int numCannibalsToMove;
+            
             String[] possibleMoves = {"0","1","2"};
             String[] combonations =  getAllLists(possibleMoves, possibleMoves.length -1);
             ArrayList<Action> theResult = new ArrayList<>();
-            Action tempAction = null;
+            Action tempAction;
 
             if(leftBoat ==1 ){
 

@@ -11,7 +11,6 @@ package package2;
 public abstract class Problem {    
     
     
-    public State getNextState(){
-        return null;
+    public Problem(State initialState, State goalState){
     }
 }
