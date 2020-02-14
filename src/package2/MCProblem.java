@@ -70,15 +70,10 @@ public class MCProblem {
 
     public static ArrayList<Action> actions(State s){
 
-            int leftMissonaries;
-            int leftCannibals;
-            int rightMissonaries;
-            int rightCannibals;
             int leftBoat = Integer.parseInt(""+s.toString().charAt(2));
             int rightBoat = Integer.parseInt(""+s.toString().charAt(3));
             int numMissonariesToMove;
             int numCannibalsToMove;
-            
             String[] possibleMoves = {"0","1","2"};
             String[] combonations =  getAllLists(possibleMoves, possibleMoves.length -1);
             ArrayList<Action> theResult = new ArrayList<>();
@@ -87,37 +82,75 @@ public class MCProblem {
             if(leftBoat ==1 ){
 
                 for(String combo: combonations){
+                     
+            int leftMissonaries;
+            int leftCannibals;
+            int rightMissonaries;
+            int rightCannibals;
                     leftMissonaries = Integer.parseInt(""+s.toString().charAt(0));
                     leftCannibals = Integer.parseInt(""+s.toString().charAt(1));
+                    rightMissonaries = Integer.parseInt(""+s.toString().charAt(4));
+                    rightCannibals = Integer.parseInt(""+s.toString().charAt(5));
                     numMissonariesToMove = Integer.parseInt(""+combo.charAt(0));
                     numCannibalsToMove = Integer.parseInt(""+combo.charAt(1));
                     leftMissonaries -= numMissonariesToMove;
                     leftCannibals -= numCannibalsToMove;
+                    rightMissonaries += numMissonariesToMove;
+                    rightCannibals += numCannibalsToMove;
 
-                    if(!(numMissonariesToMove + numCannibalsToMove > 2) && numMissonariesToMove + numCannibalsToMove > 0){
+                    if(numMissonariesToMove + numCannibalsToMove <= 2 && numMissonariesToMove + numCannibalsToMove > 0){
                         if(leftCannibals >= 0 && leftMissonaries >= 0){
-                            if(leftMissonaries >= leftCannibals){
+                            //System.out.println(rightMissonaries + "        " + rightCannibals);
+                            if(rightMissonaries == 0 && leftMissonaries >= leftCannibals){
+                               tempAction = new Action("row#" + Integer.toString(numMissonariesToMove) + Integer.toString(numCannibalsToMove));
+                               theResult.add(tempAction);
+                            }
+                            else if(leftMissonaries == 0 &&rightMissonaries >= rightCannibals ){
+                                    tempAction = new Action("row#" + Integer.toString(numMissonariesToMove) + Integer.toString(numCannibalsToMove));
+                                    theResult.add(tempAction);
+                            }
+                            else if(leftMissonaries >= leftCannibals &&rightMissonaries >= rightCannibals){
                                 tempAction = new Action("row#" + Integer.toString(numMissonariesToMove) + Integer.toString(numCannibalsToMove));
                                 theResult.add(tempAction);
+                                
                             }
-                        }
+                       }
                     }
                 }
             }
             else if(rightBoat ==1){
                 for(String combo: combonations){
-                    rightMissonaries = Integer.parseInt(""+s.toString().charAt(4));
-                    rightCannibals = Integer.parseInt(""+s.toString().charAt(5));
+                     
+  
+                    int leftMissonaries = Integer.parseInt(""+s.toString().charAt(0));
+                    int leftCannibals = Integer.parseInt(""+s.toString().charAt(1));
+                    int rightMissonaries = Integer.parseInt(""+s.toString().charAt(4));
+                    //System.out.println(s.toString());
+                    int rightCannibals = Integer.parseInt(""+s.toString().charAt(5));
                     numMissonariesToMove = Integer.parseInt(""+combo.charAt(0));
                     numCannibalsToMove = Integer.parseInt(""+combo.charAt(1));
+                    leftMissonaries += numMissonariesToMove;
+                    leftCannibals += numCannibalsToMove;
                     rightMissonaries -= numMissonariesToMove;
                     rightCannibals -= numCannibalsToMove;
 
-                    if(!(numMissonariesToMove + numCannibalsToMove > 2) && numMissonariesToMove + numCannibalsToMove > 0){
+                    if(numMissonariesToMove + numCannibalsToMove <= 2 && numMissonariesToMove + numCannibalsToMove > 0){
                         if(rightCannibals >= 0 && rightMissonaries >= 0){
-                            if(rightMissonaries >= rightCannibals){
+                                       Action a = new Action("row#" + Integer.toString(numMissonariesToMove) + Integer.toString(numCannibalsToMove));
+                                System.out.println(a);
+                                                            System.out.println(Integer.toString(leftMissonaries) + Integer.toString(leftCannibals) + Integer.toString(rightMissonaries) + Integer.toString(rightCannibals)  );
+                     
+                            if(rightMissonaries == 0 && leftMissonaries >= leftCannibals){
+                                    tempAction = new Action("row#" + Integer.toString(numMissonariesToMove) + Integer.toString(numCannibalsToMove));
+                                    theResult.add(tempAction);
+                            }
+                            else if(leftMissonaries == 0 &&rightMissonaries >= rightCannibals ){
+                                    tempAction = new Action("row#" + Integer.toString(numMissonariesToMove) + Integer.toString(numCannibalsToMove));
+                                    theResult.add(tempAction);
+                            }
+                            else if(leftMissonaries >= leftCannibals &&rightMissonaries >= rightCannibals){
                                 tempAction = new Action("row#" + Integer.toString(numMissonariesToMove) + Integer.toString(numCannibalsToMove));
-                                theResult.add(tempAction);
+                                 theResult.add(tempAction);
                         }
                     }
                 }
@@ -190,8 +223,6 @@ public class MCProblem {
     
     
     public boolean goalTest(State s){
-        System.out.println(s.toString());
-        System.out.println(goalState.toString());
         return s.toString().equals(goalState.toString());
       
     }
@@ -220,14 +251,14 @@ public class MCProblem {
         ArrayList<Action> actionList = actions(new State("331000"));
         System.out.println("Possible actions for state 331000 " + Arrays.toString(actionList.toArray()));
         
-        actionList = actions(new State("101023"));
-        System.out.println("Possible actions for state 101023 " + Arrays.toString(actionList.toArray()));
+        actionList = actions(new State("110122"));
+        System.out.println("Possible actions for state 100122" + Arrays.toString(actionList.toArray()));
         
         actionList = actions(new State("110121"));
         System.out.println("Possible actions for state 110121 " + Arrays.toString(actionList.toArray()));
         
-        actionList = actions(new State("000133"));
-        System.out.println("Possible actions for state 000133 " + Arrays.toString(actionList.toArray()));
+        actionList = actions(new State("221001"));
+        System.out.println("Possible actions for state 221001 " + Arrays.toString(actionList.toArray()));
 
         System.out.println("End of test for ProblemMC class");
 
