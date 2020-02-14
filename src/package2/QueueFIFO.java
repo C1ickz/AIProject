@@ -23,7 +23,9 @@ public class QueueFIFO<T>{
     public void insert(T node){
         list.add(node);
     }
-    
+    public int size(){
+        return list.size();
+    }
     public void pop() throws NoSuchElementException {
         if(list.isEmpty())
             throw new NoSuchElementException("Trying to delete from an empty queue");

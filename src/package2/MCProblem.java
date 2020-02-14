@@ -16,6 +16,7 @@ public class MCProblem {
     private State initialState;
     private State goalState;
     
+    
     public MCProblem(State initialState, State goalState){
         this.initialState = initialState;
         this.goalState = goalState;
@@ -189,6 +190,8 @@ public class MCProblem {
     
     
     public boolean goalTest(State s){
+        System.out.println(s.toString());
+        System.out.println(goalState.toString());
         return s.toString().equals(goalState.toString());
       
     }

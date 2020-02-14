@@ -11,11 +11,9 @@ import java.util.Arrays;
  * @author Ryan
  */
 public class Agent {
-    private Node root = new Node(new State("331000"));
-    private State goal = new State("000133");
+
     private Sequence explored = new Sequence();
     private InputParser parser = new InputParser();
-    private MCProblem problem = new MCProblem(new State("331000"), new State("331000"));
     State childState = null;
     
     
@@ -46,18 +44,20 @@ public class Agent {
     
     
     
-    public Sequence bfs(Node root){
+    public Sequence bfs(MCProblem problem){
         QueueFIFO<Node> frontier = new QueueFIFO<>();
         QueueFIFO<State> explored = new QueueFIFO<>();
+        int timesLooped= 0;
         //Node node = root;
         Node node = new Node(problem.getInitialState());
         Node child =null;
-        if(problem.goalTest(goal)){
+        if(problem.goalTest(new State("331000"))){
             return node.getSolution();
         }
-        frontier.insert(root);
-        explored.insert(root.getState());
+        frontier.insert(node);
+        explored.insert(node.getState());
         while(!frontier.isEmpty()){
+            
             node = frontier.getNode();
             frontier.pop();
             explored.insert(node.getState());
@@ -66,11 +66,15 @@ public class Agent {
                 child = childNode(problem, node,action);
                 if(!explored.contains(child.getState()) || !frontier.contains(child)){
                     if(problem.goalTest(child.getState())){
+                        System.out.println("The size of the frontier is " + frontier.size());
+                        System.out.println("The size of the explored states is " + explored.size());
                         return child.getSolution();
                     }
                 }
                 System.out.println(child.toString());
+                explored.insert(child.getState());
                 frontier.insert(child);
+                timesLooped++;
 
             }
                            
@@ -84,10 +88,11 @@ public class Agent {
     }
     
     public static void main(String[] args){
-        Node node = new Node(new State("331000"));
+        MCProblem problem = new MCProblem(new State("331000"), new State("000133"));
         Agent agent = new Agent();
-        Sequence hi = agent.bfs(node);
-        System.out.println(hi.toString());
+        Sequence actionsTaken = agent.bfs(problem);
+       
+        System.out.println(actionsTaken.toString());
         
     }
 }
