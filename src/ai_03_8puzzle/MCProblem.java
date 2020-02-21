@@ -8,12 +8,13 @@ package ai_03_8puzzle;
 import ai_02_MandC.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  *
  * @author Ryan
  */
-public class MCProblem extends Problem {
+public class MCProblem extends Problem{
     private State initialState;
     private State goalState;
     
@@ -73,7 +74,7 @@ public class MCProblem extends Problem {
 
 
     @Override
-    public  ArrayList<Action> actions(State s){
+    public ArrayList<Action> actions(State s){
 
             int leftBoat = Integer.parseInt(""+s.toString().charAt(2));
             int rightBoat = Integer.parseInt(""+s.toString().charAt(3));
@@ -125,7 +126,6 @@ public class MCProblem extends Problem {
             }
             else if(rightBoat ==1){
                 for(String combo: combonations){
-                     
   
                     int leftMissonaries = Integer.parseInt(""+s.toString().charAt(0));
                     int leftCannibals = Integer.parseInt(""+s.toString().charAt(1));
@@ -167,7 +167,7 @@ public class MCProblem extends Problem {
 }
 
     @Override
-    public  State result(State s, Action a){
+    public State result(State s, Action a){
         if(a == null || a.toString() == null){
             return s;
         }
@@ -221,7 +221,11 @@ public class MCProblem extends Problem {
         System.out.println("goal reached " + goalReached + "\n=========");
 
     }
-
+    public void testGoalTest(){
+        tryOneGoalTest("000133");
+        tryOneGoalTest("331000");
+        tryOneGoalTest("321001");
+    }
     
     
     @Override
@@ -241,13 +245,14 @@ public class MCProblem extends Problem {
         System.out.println("test main for ProblemMC class");
         State startState = new State("331000");
         State goalState = new State("000133");
-        Problem testProblem = new MCProblem(startState, goalState);
+        MCProblem testProblem = new MCProblem(startState, goalState);
         System.out.println(testProblem.toString());
         
         State initial = testProblem.getInitialState();
         System.out.println("The initial state is " + initial);
         //testProblem.testActions();
         //testProblem.testResult();
+        testProblem.testGoalTest();
         State state = testProblem.result(startState, new Action("row#10"));
         System.out.println("================================================================================");
         ArrayList<Action> actionList = testProblem.actions(new State("331000"));

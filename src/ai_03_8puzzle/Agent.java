@@ -4,6 +4,8 @@
  */
 package ai_03_8puzzle;
 
+import ai_02_MandC.*;
+import java.util.Arrays;
 
 /**
  *
@@ -14,6 +16,7 @@ public class Agent {
     private Sequence explored = new Sequence();
     private InputParser parser = new InputParser();
     State childState = null;
+    Problem problem = null;
     
     
 //        public Action simple_problem_solving_agent(Percept percept){
@@ -26,7 +29,16 @@ public class Agent {
 //        }
 //    }
     
-    public Agent(){}
+    public Agent(String originalData){
+        if(originalData.equals("M&C")){
+            problem = new MCProblem(new State("331000"), new State("000133"));
+            Sequence actionsTaken = bfs(problem);     
+            System.out.println(actionsTaken.toString());
+        }
+        else{
+            System.out.println("Problem not currently implemented in the ");
+        }
+    }
     
   
         
@@ -89,11 +101,8 @@ public class Agent {
     }
     
     public static void main(String[] args){
-        Problem problem = new MCProblem(new State("331000"), new State("000133"));
-        Agent agent = new Agent();
-        Sequence actionsTaken = agent.bfs(problem);
-       
-        System.out.println(actionsTaken.toString());
+        Agent agent = new Agent("M&C");
+
         
     }
 }

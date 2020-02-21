@@ -20,14 +20,13 @@ public abstract class Problem {
     
     public abstract State getInitialState();
     
-    public abstract ArrayList<Action> actions(State s);
+    public abstract  ArrayList<Action> actions(State s);
     
     public  abstract  State result(State s, Action a);
     
     public abstract boolean goalTest(State s);
     
     public abstract int step_cost(State state, Action action);
-    
     
     //public abstract void setEnvironment(String data);
     
