@@ -24,7 +24,7 @@ public abstract class Problem {
     
     public  abstract  State result(State s, Action a);
     
-    public abstract boolean goalTest(State s);
+    public abstract boolean isGoalState(State s);
     
     public abstract int step_cost(State state, Action action);
     

@@ -17,7 +17,7 @@ public class Agent {
     private InputParser parser = new InputParser();
     State childState = null;
     Problem problem = null;
-    
+    Sequence actionsTaken;
     
 //        public Action simple_problem_solving_agent(Percept percept){
 //        state = update_state(state, percept);
@@ -32,7 +32,7 @@ public class Agent {
     public Agent(String originalData){
         if(originalData.equals("M&C")){
             problem = new MCProblem(new State("331000"), new State("000133"));
-            Sequence actionsTaken = bfs(problem);     
+            actionsTaken = bfs(problem);     
             System.out.println(actionsTaken.toString());
         }
         else{
@@ -40,7 +40,9 @@ public class Agent {
         }
     }
     
-  
+  public Sequence getSolution(){
+           return actionsTaken;     
+  }
         
 
     private Node childNode(Problem problem, Node parent, Action action){
@@ -62,7 +64,7 @@ public class Agent {
         //Node node = root;
         Node node = new Node(problem.getInitialState());
         Node child =null;
-        if(problem.goalTest(new State("331000"))){
+        if(node.getState().toString().equals("000133")){
             return node.getSolution();
         }
         frontier.insert(node);
@@ -76,7 +78,7 @@ public class Agent {
                 //System.out.println(action);
                 child = childNode(problem, node,action);
                 if(!explored.contains(child.getState()) || !frontier.contains(child)){
-                    if(problem.goalTest(child.getState())){
+                    if(problem.isGoalState(child.getState())){
                         System.out.println("The size of the frontier is " + frontier.size());
                         System.out.println("The size of the explored states is " + explored.size());
                         return child.getSolution();

@@ -48,10 +48,17 @@ public class Sequence {
         
         actionsTaken.remove(actionsTaken.size() -1);
     }
+    public int size(){
+        return  actionsTaken.size();
+    }
     
     @Override
     public String toString(){
         return Arrays.toString(actionsTaken.toArray());
+    }
+    
+    public Action get(int index){
+        return actionsTaken.get(index);
     }
     
     //return the sequence of actions

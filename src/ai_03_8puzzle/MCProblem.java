@@ -5,10 +5,8 @@
  */
 package ai_03_8puzzle;
 
-import ai_02_MandC.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  *
@@ -216,7 +214,7 @@ public class MCProblem extends Problem{
     
     public void tryOneGoalTest(String stateString){
         State state = new State(stateString);
-        boolean goalReached = goalTest(state);
+        boolean goalReached = isGoalState(state);
         System.out.println("state.toString() " + state.toString());
         System.out.println("goal reached " + goalReached + "\n=========");
 
@@ -229,8 +227,8 @@ public class MCProblem extends Problem{
     
     
     @Override
-    public boolean goalTest(State s){
-        return s.toString().equals(goalState.toString());
+    public boolean isGoalState(State s){
+        return s.toString().equals(this.goalState.toString());
       
     }
     
