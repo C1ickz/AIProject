@@ -6,6 +6,8 @@
 package ai_03_8puzzle;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  *
@@ -13,13 +15,19 @@ import java.util.ArrayList;
  */
 public class Problem8puzzle extends Problem{
 
+    private State initialState;
+    private State goalState;
+    
+    
     public Problem8puzzle(State initialState, State goalState) {
         super(initialState, goalState);
+        this.initialState= initialState;
+        this.goalState = goalState;
     }
 
     @Override
     public State getInitialState() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return initialState;
     }
 
     @Override
@@ -29,7 +37,54 @@ public class Problem8puzzle extends Problem{
 
     @Override
     public State result(State s, Action a) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+                if(a == null || a.toString() == null){
+            return s;
+        }
+                
+        int columns, rows = 4;        
+        int[][] puzzle = new int[4][4];
+        
+        
+        for(int i = 0; i < rows;i++){     
+            for(int j = 0; i < columns; j++){
+                puzzle[i][j] = Integer.parseInt(""+s.toString.charAt(j));
+            }
+            
+        
+        }
+        
+        
+        
+        switch(a.toString()){
+            case "moveRight":
+                break;
+                
+                
+                
+            case "moveLeft":
+                break;
+                
+            case "moveDown":
+                break;
+                
+            case  "moveUp":
+                
+                
+                    
+                
+                
+                
+                
+                
+                    
+        }
+        
+   
+
+  
+        
+        return new State(data);  
     }
 
     @Override
@@ -39,7 +94,10 @@ public class Problem8puzzle extends Problem{
 
     @Override
     public int step_cost(State state, Action action) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 1;
     }
     
+    public static void main(String[] args){
+        
+    }
 }

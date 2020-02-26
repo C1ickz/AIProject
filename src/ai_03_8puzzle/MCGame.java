@@ -44,13 +44,13 @@ public class MCGame extends JComponent {
     public int bestscore1;
     public boolean gameOver, started;
     Agent agent = new Agent("M&C");
-            Sequence actions = agent.getSolution();
+    Sequence actions =getSolution();
 
     public static void main(String[] args) {
-        Sequence actions = agent.getSolution();
-        for(int i =0; i < actions.size(); i++){
-            System.out.println(actions.get(i));
-        }
+//        Sequence actions = new Sequence(); 
+//        for(int i =0; i < actions.size(); i++){
+//            System.out.println(actions.get(i));
+//        }
         JFrame MCGame = new JFrame("M&C Game");
         MCGame g = new MCGame();
         MCGame.add(g);
