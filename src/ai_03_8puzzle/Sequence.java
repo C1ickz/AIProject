@@ -8,6 +8,7 @@ package ai_03_8puzzle;
 import ai_02_MandC.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -15,7 +16,7 @@ import java.util.Arrays;
  * @author ryanharris
  */
 public class Sequence {
-    private ArrayList<Action> actionsTaken;
+    private List<Action> actionsTaken;
 
     
     public Sequence(){
@@ -31,7 +32,7 @@ public class Sequence {
         actionsTaken.add(state);
     }  
     
-    public ArrayList<Action> getSequence(ArrayList<Action> sequence){
+    public List<Action> getSequence(ArrayList<Action> sequence){
         return sequence;
     }
     
@@ -43,6 +44,10 @@ public class Sequence {
         else{
         return actionsTaken.get(actionsTaken.size() -1);
         }
+    }
+    
+    public List<Action> getRest(){
+        return actionsTaken.subList(1, actionsTaken.size());
     }
     public void remove(){
         
@@ -73,6 +78,9 @@ public class Sequence {
             }
         }
         System.out.println(actions.toString());
+        System.out.println(actions.getFirst());
+        System.out.println(actions.getRest());
+        
        
         
     }

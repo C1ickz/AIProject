@@ -68,7 +68,6 @@ public class Agent {
             return node.getSolution();
         }
         frontier.insert(node);
-        explored.insert(node.getState());
         while(!frontier.isEmpty()){
             node = frontier.getNode();
 

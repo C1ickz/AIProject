@@ -7,6 +7,7 @@ package ai_03_8puzzle;
 import ai_02_MandC.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 /**
@@ -16,7 +17,7 @@ import java.util.NoSuchElementException;
  */
 public class QueueFIFO<T>{
 
-    private ArrayList<T> list;
+    private List<T> list;
     
     public QueueFIFO(){list = new ArrayList<>();}
 
@@ -58,10 +59,16 @@ public class QueueFIFO<T>{
     public static void main(String[] args){
         QueueFIFO queue = new QueueFIFO();
         Action string = new Action("Hello");
+        System.out.println("Before adding to queue");
+        System.out.println("isEmpty()=" + queue.isEmpty());
+        System.out.println("After adding items to queue");
+        queue.insert(string);
         queue.insert(string);
         System.out.println(queue.toString());
         queue.pop();
-        System.out.println(queue.toString());
+        System.out.println("Pop one from queue");
+        System.out.println(queue.toString());        
+        System.out.println("isEmpty() =" + queue.isEmpty());
    
         
 

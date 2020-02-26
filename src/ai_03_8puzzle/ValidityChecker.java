@@ -66,14 +66,12 @@ public class ValidityChecker {
         String desiredState = hash[1]; 
         
         if(currentState.length() == 6 && desiredState.length() == 6){
-            if(currentState.equals(new StringBuilder(desiredState).reverse().toString())){
-                return "Puzzle is valid";
-            }
+                return "The puzzle " + input + " is valid";
+            
         }
         else{
-            return "Puzzle is not valid";
+                return "The puzzle " + input + " is not valid";
         }
-        return null;
  
     }
     
@@ -81,7 +79,11 @@ public class ValidityChecker {
     public static void main(String[] args){
         ValidityChecker checker = new ValidityChecker();
         System.out.println(checker.checkMC("M&C#331000#000133"));
+        System.out.println(checker.checkMC("M&C#221000#000111"));
+
         System.out.println(checker.checkMC("M&C#33100#000133"));
+        System.out.println(checker.checkMC("M&C#123rgre100#000133"));
+
 
     }
     

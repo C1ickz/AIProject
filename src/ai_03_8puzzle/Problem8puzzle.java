@@ -80,13 +80,49 @@ public class Problem8puzzle extends Problem{
                     
         }
         
-   
+        
+
 
   
         
         return new State(data);  
     }
+    
+    
+       
+        public int findBlank(int[][] puzzle){
+            int index = 0;
+            return index;
+        }
+        
+        public int[][] moveRight(int[][] puzzle){
+        return null;
+            
+        }
 
+        public int[][] moveLeft(int[][] puzzle){
+        return null;
+            
+        }
+
+        public int[][] moveUp(int[][] puzzle){
+        return null;
+            
+        }
+
+        public int[][] moveDown(int[][] puzzle){
+        	int [][] a= state;
+		 int tile = a[row][column];
+		a [row][column] = a [row+1][column];
+		a [row+1][column] = tile;	
+		total++;
+		return a;
+        }
+
+        public boolean isValidMove(String move){
+        return false;
+            
+        }
     @Override
     public boolean isGoalState(State s) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

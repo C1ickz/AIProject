@@ -96,6 +96,7 @@ public class Node {
         Node root = new Node(new State("331000"));//Initial State
         
         Node child1 = new Node(new State("310102"), root,new Action("row#02"),1);
+        Node child2 = new Node(new State("3210001"), child1, new Action("row#01"),1);
         System.out.println(child1.toString());
  
 
