@@ -30,10 +30,15 @@ public class Agent {
 //    }
     
     public Agent(String originalData){
-        if(originalData.equals("M&C")){
+        if(originalData.startsWith("M&C#")){
             problem = new MCProblem(new State("331000"), new State("000133"));
             actionsTaken = bfs(problem);     
             System.out.println(actionsTaken.toString());
+        }
+        else if(originalData.startsWith("8puzzle#")){
+            problem = new EightPuzzleProblem(new State("182043765"), new State("123456780"));
+            actionsTaken = bfs(problem);     
+            //System.out.println(actionsTaken.toString());
         }
         else{
             System.out.println("Problem not currently implemented in the ");
@@ -64,7 +69,9 @@ public class Agent {
         //Node node = root;
         Node node = new Node(problem.getInitialState());
         Node child =null;
+
         if(node.getState().toString().equals("000133")){
+
             return node.getSolution();
         }
         frontier.insert(node);
@@ -74,16 +81,21 @@ public class Agent {
             frontier.pop();
             explored.insert(node.getState());
             for(Action action: problem.actions(node.getState())){
+                
                 //System.out.println(action);
+
                 child = childNode(problem, node,action);
+
                 if(!explored.contains(child.getState()) || !frontier.contains(child)){
                     if(problem.isGoalState(child.getState())){
                         System.out.println("The size of the frontier is " + frontier.size());
                         System.out.println("The size of the explored states is " + explored.size());
                         return child.getSolution();
                     }
+
                 }
-                            System.out.print(child.getState() + " ");
+
+                System.out.print(child.getState() + " ");
 
                 //System.out.println(child.toString());
                 explored.insert(child.getState());
@@ -91,18 +103,15 @@ public class Agent {
                 timesLooped++;
 
             }
-                           
+
 
         }
-        
-        
-        
         
         return null;
     }
     
     public static void main(String[] args){
-        Agent agent = new Agent("M&C");
+        Agent agent = new Agent("8puzzle#");
 
         
     }

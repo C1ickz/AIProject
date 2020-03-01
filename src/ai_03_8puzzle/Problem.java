@@ -6,6 +6,7 @@ package ai_03_8puzzle;
 
 import ai_02_MandC.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -20,7 +21,7 @@ public abstract class Problem {
     
     public abstract State getInitialState();
     
-    public abstract  ArrayList<Action> actions(State s);
+    public abstract  List<Action> actions(State s);
     
     public  abstract  State result(State s, Action a);
     

@@ -77,9 +77,9 @@ public class Sequence {
                 actions.add(new Action("Right"));
             }
         }
-        System.out.println(actions.toString());
-        System.out.println(actions.getFirst());
-        System.out.println(actions.getRest());
+        System.out.println("Actions.toString(): " + actions.toString());
+        System.out.println("getFirst(): " + actions.getFirst());
+        System.out.println("getRest(): " + actions.getRest());
         
        
         

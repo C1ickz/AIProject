@@ -7,6 +7,7 @@ package ai_03_8puzzle;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  *
@@ -38,11 +39,7 @@ public class MCProblem extends Problem{
         return 1;
     }
     
-    private void showStateAndAction(State state)
-    {
-       // ArrayList<Action> allActions = actiosn(state);
-    }
-       
+
     public  String[] getAllLists(String[] elements, int lengthOfList )
     {
 
@@ -72,7 +69,7 @@ public class MCProblem extends Problem{
 
 
     @Override
-    public ArrayList<Action> actions(State s){
+    public List<Action> actions(State s){
 
             int leftBoat = Integer.parseInt(""+s.toString().charAt(2));
             int rightBoat = Integer.parseInt(""+s.toString().charAt(3));
@@ -253,7 +250,7 @@ public class MCProblem extends Problem{
         testProblem.testGoalTest();
         State state = testProblem.result(startState, new Action("row#10"));
         System.out.println("================================================================================");
-        ArrayList<Action> actionList = testProblem.actions(new State("331000"));
+        List<Action> actionList = testProblem.actions(new State("331000"));
         System.out.println("Possible actions for state 331000 " + Arrays.toString(actionList.toArray()));
         
         actionList = testProblem.actions(new State("110122"));

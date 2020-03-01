@@ -13,12 +13,12 @@ import ai_02_MandC.*;
 public class State {
     
     private String state;
-    private Integer[] stateInt = new Integer[6];
+    private int[] stateInt = new int[6];
     public State(String state){
         this.state = state;
     }
     
-    public Integer[] toIntArr(){
+    public int[] toIntArr(){
         String[] toArr = state.trim().split("");
         for(int i = 0; i < stateInt.length; i++){
             stateInt[i] = Integer.parseInt(toArr[i]);

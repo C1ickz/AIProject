@@ -41,7 +41,7 @@ public class ValidityChecker {
         }
         
         // if contains = false send hint to user
-        if(contains == false){
+        if(contains == false || hash[0].length() != 9 || hash[1].length() != 9){
            return "Inputted puzzle is not valid, \n \"Ex: 8puzzle#XXXXXXXXX#XXXXXXXXX. Please make sure the range of numbers is between 0 and 8 with no repeats,";
         }
         //Since boolean only has two outcomes else if is not needed
@@ -65,24 +65,43 @@ public class ValidityChecker {
         String currentState = hash[0];
         String desiredState = hash[1]; 
         
+        try{
+            Integer.parseInt(hash[0]);
+            Integer.parseInt(hash[1]);
         if(currentState.length() == 6 && desiredState.length() == 6){
                 return "The puzzle " + input + " is valid";
             
         }
-        else{
-                return "The puzzle " + input + " is not valid";
+  
+        
+   
         }
+        
+        catch(NumberFormatException e){
+                return "The puzzle " + input + " is not valid";
+
+        }
+        return "The puzzle " + input + " is not valid";
  
     }
     
     
     public static void main(String[] args){
         ValidityChecker checker = new ValidityChecker();
+        System.out.println("M&C");
         System.out.println(checker.checkMC("M&C#331000#000133"));
         System.out.println(checker.checkMC("M&C#221000#000111"));
 
         System.out.println(checker.checkMC("M&C#33100#000133"));
         System.out.println(checker.checkMC("M&C#123rgre100#000133"));
+        System.out.println("=====================================\n");
+        System.out.println("8puzzle");
+        System.out.println(checker.check8puzzle("8puzzle#123456780#087654321"));
+        System.out.println(checker.check8puzzle("8puzzle#012345687#012345678"));
+        
+        System.out.println(checker.check8puzzle("8puzzle#1r3456780#087654321"));
+        System.out.println(checker.check8puzzle("8puzzle#1222223456780#087654321"));
+
 
 
     }

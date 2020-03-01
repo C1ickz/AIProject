@@ -31,7 +31,7 @@ public class Problem8puzzle extends Problem{
     }
 
     @Override
-    public ArrayList<Action> actions(State s) {
+    public List<Action> actions(State s) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
