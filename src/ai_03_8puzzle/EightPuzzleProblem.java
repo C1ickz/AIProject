@@ -23,8 +23,8 @@ public class EightPuzzleProblem extends Problem{
         this.goalState = goalState;
         
     }
-        
-    public static void visualizePuzzle(State state){
+    @Override    
+    public void visualizePuzzle(State state){
         String puzzle = state.toString();
         for(int i = 0; i < puzzle.length(); i += 3){
             String[] temp = puzzle.substring(i, Math.min(puzzle.length(), i + 3)).split("");
@@ -114,39 +114,39 @@ public class EightPuzzleProblem extends Problem{
         int temp;
         switch(a.toString()){
             case "mr":
-                System.out.println("right");
-                System.out.println(Arrays.deepToString(puzzle));
+               // System.out.println("right");
+                //System.out.println(Arrays.deepToString(puzzle));
 
                 temp = puzzle[row][column];
                 puzzle[row][column] = puzzle[row][column + 1];
                 puzzle[row][column + 1] = temp;
-                System.out.println(Arrays.deepToString(puzzle));
+               // System.out.println(Arrays.deepToString(puzzle));
                 break;
             case "ml":
-                System.out.println("left");
-                System.out.println(Arrays.deepToString(puzzle));
+               // System.out.println("left");
+               // System.out.println(Arrays.deepToString(puzzle));
                 temp = puzzle[row][column];
                 puzzle[row][column] = puzzle[row][column - 1];
                 puzzle[row][column - 1] = temp;
-                System.out.println(Arrays.deepToString(puzzle));
+               // System.out.println(Arrays.deepToString(puzzle));
 
                 break;
             case "mu":
-                System.out.println("up");
-                System.out.println(Arrays.deepToString(puzzle));
+              //  System.out.println("up");
+              //  System.out.println(Arrays.deepToString(puzzle));
                 temp = puzzle[row][column];
                 puzzle[row][column] = puzzle[row - 1][column];
                 puzzle[row - 1][column] = temp;
-                System.out.println(Arrays.deepToString(puzzle));
+              //  System.out.println(Arrays.deepToString(puzzle));
                 break;
             case "md":
-                System.out.println("down");
-                System.out.println(Arrays.deepToString(puzzle));
+               // System.out.println("down");
+               // System.out.println(Arrays.deepToString(puzzle));
                 temp = puzzle[row][column];
                 puzzle[row][column] = puzzle[row + 1][column];
                 puzzle[row + 1][column] = temp;
                 puzzle[row+1][column] = temp;
-                System.out.println(Arrays.deepToString(puzzle));
+               // System.out.println(Arrays.deepToString(puzzle));
                 
         }
         String original = "";
@@ -173,7 +173,7 @@ public class EightPuzzleProblem extends Problem{
     
     public static void main(String[] args){
        // State state = new State("123456780");
-                State state = new State("123456708");
+                State state = new State("182630745");
 
         Problem eightPuzzle = new EightPuzzleProblem(state, state);
 
@@ -183,7 +183,7 @@ public class EightPuzzleProblem extends Problem{
         System.out.println(Arrays.toString(zeroIndex));
         List<Action> actions = eightPuzzle.actions(state);
         System.out.println("Possible actions " + Arrays.toString(actions.toArray()));
-        visualizePuzzle(state);
+        eightPuzzle.visualizePuzzle(state);
         State yes = eightPuzzle.result(state, new Action("mu"));
         //System.out.println(yes.toString());
     }

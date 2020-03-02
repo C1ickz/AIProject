@@ -37,7 +37,7 @@ public class Node {
     
     public Sequence getSolution(){
         ArrayList<Action> answer = new ArrayList<>();
-        Node temp = this;
+        Node temp = parent;
         Action theAction = temp.getAction();
         while(theAction != null){
             if(theAction!= null){

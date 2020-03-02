@@ -36,9 +36,17 @@ public class Agent {
             System.out.println(actionsTaken.toString());
         }
         else if(originalData.startsWith("8puzzle#")){
-            problem = new EightPuzzleProblem(new State("182043765"), new State("123456780"));
-            actionsTaken = bfs(problem);     
-            //System.out.println(actionsTaken.toString());
+            problem = new EightPuzzleProblem(new State("082143765"), new State("123456780"));
+            actionsTaken = bfs(problem);
+                            State temp = problem.getInitialState();
+
+            for(int i = 0; i < actionsTaken.size() - 1; i++){
+                State state = problem.result(temp, actionsTaken.get(i));
+                problem.visualizePuzzle(state);
+                System.out.println("\n");
+                temp = state;
+            }
+            System.out.println(actionsTaken.toString());
         }
         else{
             System.out.println("Problem not currently implemented in the ");
@@ -90,12 +98,14 @@ public class Agent {
                     if(problem.isGoalState(child.getState())){
                         System.out.println("The size of the frontier is " + frontier.size());
                         System.out.println("The size of the explored states is " + explored.size());
+                        System.out.print(child.getState() + " ");
+
                         return child.getSolution();
                     }
 
                 }
 
-                System.out.print(child.getState() + " ");
+                //System.out.print(child.getState() + " ");
 
                 //System.out.println(child.toString());
                 explored.insert(child.getState());

@@ -6,14 +6,17 @@
             <file>file:/C:/Users/Ryan/Documents/GitHub/AIProject/src/ai_03_8puzzle/MCProblem.java</file>
             <file>file:/C:/Users/Ryan/Documents/GitHub/AIProject/src/ai_03_8puzzle/Problem8puzzle.java</file>
             <file>file:/C:/Users/Ryan/Documents/GitHub/AIProject/src/ai_03_8puzzle/Problem.java</file>
+            <file>file:/C:/Users/Ryan/Documents/GitHub/AIProject/src/ai_03_8puzzle/EightPuzzleProblem.java</file>
+            <file>file:/C:/Users/Ryan/Documents/GitHub/AIProject/src/ai_03_8puzzle/QueueFIFO.java</file>
+            <file>file:/C:/Users/Ryan/Documents/GitHub/AIProject/src/ai_03_8puzzle/InputParser.java</file>
+            <file>file:/C:/Users/Ryan/Documents/GitHub/AIProject/src/ai_03_8puzzle/ValidityChecker.java</file>
+            <file>file:/C:/Users/Ryan/Documents/GitHub/AIProject/src/ai_03_8puzzle/Percept.java</file>
+            <file>file:/C:/Users/Ryan/Documents/GitHub/AIProject/src/ai_03_8puzzle/Node.java</file>
             <file>file:/C:/Users/Ryan/Documents/GitHub/AIProject/src/ai_03_8puzzle/MainFrame.java</file>
             <file>file:/C:/Users/Ryan/Documents/GitHub/AIProject/src/ai_03_8puzzle/Agent.java</file>
             <file>file:/C:/Users/Ryan/Documents/GitHub/AIProject/src/ai_03_8puzzle/MCGame.java</file>
             <file>file:/C:/Users/Ryan/Documents/GitHub/AIProject/src/ai_03_8puzzle/State.java</file>
-            <file>file:/C:/Users/Ryan/Documents/GitHub/AIProject/src/ai_03_8puzzle/QueueFIFO.java</file>
-            <file>file:/C:/Users/Ryan/Documents/GitHub/AIProject/src/ai_03_8puzzle/ValidityChecker.java</file>
-            <file>file:/C:/Users/Ryan/Documents/GitHub/AIProject/src/ai_03_8puzzle/Percept.java</file>
-            <file>file:/C:/Users/Ryan/Documents/GitHub/AIProject/src/ai_03_8puzzle/Node.java</file>
+            <file>file:/C:/Users/Ryan/Documents/GitHub/AIProject/src/ai_03_8puzzle/Action.java</file>
             <file>file:/C:/Users/Ryan/Documents/GitHub/AIProject/src/ai_03_8puzzle/Sequence.java</file>
         </group>
     </open-files>

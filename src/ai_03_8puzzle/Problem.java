@@ -29,6 +29,8 @@ public abstract class Problem {
     
     public abstract int step_cost(State state, Action action);
     
+    public abstract void visualizePuzzle(State state);
+    
     //public abstract void setEnvironment(String data);
     
     //public abstract String getEnvironmentDisplayString(String[][] data);
