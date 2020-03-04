@@ -7,6 +7,7 @@ package ai_03_8puzzle;
 import ai_02_MandC.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  *
@@ -20,13 +21,22 @@ public class Node {
     private int pathCost;
     private int depth;
     
-    //Constructor for the root node
+    /**
+     * Constructor for the root node
+     * @param state 
+     */
     public Node(State state){
         this.state=state;
         this.parent = null;
     }
     
-    
+    /**
+     * 
+     * @param state
+     * @param parent
+     * @param action
+     * @param pathCost 
+     */
     public Node(State state, Node parent, Action action, int pathCost){
         this.action = action;
         this.state = state;
@@ -35,25 +45,30 @@ public class Node {
     
     }
     
+    /**
+     * 
+     * @return Sequence of actions to take to reach goalState
+     */
     public Sequence getSolution(){
         ArrayList<Action> answer = new ArrayList<>();
-        Node temp = parent;
+        Node temp = this;
         Action theAction = temp.getAction();
-        while(theAction != null){
+        do{
             if(theAction!= null){
                 answer.add(theAction);
                 temp = temp.getParentNode();
                 if(temp == null){
                     theAction = null;
                 }
-                
-            theAction = temp.getAction();
-                
+                else{
+                    theAction = temp.getAction();
+                }
             }
             
         }
-       
-        return new Sequence(answer);
+        while(theAction!=null);
+        Collections.reverse(answer);
+        return new Sequence(answer);//reversed solution
     }
     
     @Override
@@ -67,6 +82,10 @@ public class Node {
         
     }
     
+    /**
+     * Gets the parent node of a child node
+     * @return The parent node of the child selected
+     */
     public Node getParentNode(){
         return this.parent;
     }

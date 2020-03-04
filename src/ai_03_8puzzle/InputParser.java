@@ -17,7 +17,7 @@ public class InputParser {
         private static String input;
         private static String[] inputArr;
     
-        public static String[] parseInput(String puzzle) {
+        public String[] parseInput(String puzzle) {
 
         if(puzzle.startsWith("8puzzle#")){
             //parse input here

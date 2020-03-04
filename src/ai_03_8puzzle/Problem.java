@@ -31,6 +31,8 @@ public abstract class Problem {
     
     public abstract void visualizePuzzle(State state);
     
+
+    
     //public abstract void setEnvironment(String data);
     
     //public abstract String getEnvironmentDisplayString(String[][] data);

@@ -77,12 +77,16 @@ public class EightPuzzleProblem extends Problem{
 
     @Override
     public List<Action> actions(State s) {
+        
+        System.out.println("=================================");
+        System.out.println("Original state");
+        visualizePuzzle(s);
+        System.out.println("---------");
         List<Action> actions = new ArrayList<>();
         int[][] puzzle = convertToArr(s);
         int row = getZeroIndex(puzzle)[0];
         int column = getZeroIndex(puzzle)[1];
-        System.out.println("Row " + row + " Column " + column);
-        System.out.println(puzzle.length);
+       // System.out.println("Row " + row + " Column " + column);
         //move up 
         if(row > 0){
             actions.add(new Action("mu"));
@@ -102,6 +106,7 @@ public class EightPuzzleProblem extends Problem{
         if(column < puzzle[0].length - 1){
             actions.add(new Action("mr"));
         }
+        System.out.println("There are " + actions.size() + " possible actions");
 
         return actions;
     }
@@ -155,7 +160,10 @@ public class EightPuzzleProblem extends Problem{
                 original += puzzle[i][j];
             }
         }
-        //State original = backToOriginal(puzzle);
+        System.out.println(a.toString());
+        visualizePuzzle(new State(original));
+        System.out.println("-----------");
+       // State original = backToOriginal(puzzle);
         return new State(original);
     }
     
@@ -173,7 +181,9 @@ public class EightPuzzleProblem extends Problem{
     
     public static void main(String[] args){
        // State state = new State("123456780");
-                State state = new State("182630745");
+      //State state = new State("182630745");
+        State state = new State("512346780");
+
 
         Problem eightPuzzle = new EightPuzzleProblem(state, state);
 
@@ -185,6 +195,9 @@ public class EightPuzzleProblem extends Problem{
         System.out.println("Possible actions " + Arrays.toString(actions.toArray()));
         eightPuzzle.visualizePuzzle(state);
         State yes = eightPuzzle.result(state, new Action("mu"));
-        //System.out.println(yes.toString());
+        System.out.println("\n");
+        eightPuzzle.visualizePuzzle(yes);
     }
+
+  
 }

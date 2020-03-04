@@ -29,23 +29,27 @@ public class Agent {
 //        }
 //    }
     
+    /**
+     * Constructor for the Agent class
+     * @param originalData 
+     */
     public Agent(String originalData){
+        State startState = new State(parser.parseInput(originalData)[0]);
+        State goalState = new State(parser.parseInput(originalData)[1]);
+        
         if(originalData.startsWith("M&C#")){
-            problem = new MCProblem(new State("331000"), new State("000133"));
+            problem = new MCProblem(startState, goalState);
             actionsTaken = bfs(problem);     
             System.out.println(actionsTaken.toString());
         }
         else if(originalData.startsWith("8puzzle#")){
-            problem = new EightPuzzleProblem(new State("082143765"), new State("123456780"));
-            actionsTaken = bfs(problem);
-                            State temp = problem.getInitialState();
+            problem = new EightPuzzleProblem(startState, goalState);
 
-            for(int i = 0; i < actionsTaken.size() - 1; i++){
-                State state = problem.result(temp, actionsTaken.get(i));
-                problem.visualizePuzzle(state);
-                System.out.println("\n");
-                temp = state;
-            }
+            actionsTaken = bfs(problem);
+            //print out the actions taken step by step with a thread.sleep between each step to delay
+            
+            
+         
             System.out.println(actionsTaken.toString());
         }
         else{
@@ -78,7 +82,7 @@ public class Agent {
         Node node = new Node(problem.getInitialState());
         Node child =null;
 
-        if(node.getState().toString().equals("000133")){
+        if(problem.isGoalState(node.getState())){
 
             return node.getSolution();
         }
@@ -94,7 +98,7 @@ public class Agent {
 
                 child = childNode(problem, node,action);
 
-                if(!explored.contains(child.getState()) || !frontier.contains(child)){
+                if(!explored.contains(child.getState()) && !frontier.contains(child)){
                     if(problem.isGoalState(child.getState())){
                         System.out.println("The size of the frontier is " + frontier.size());
                         System.out.println("The size of the explored states is " + explored.size());
@@ -121,7 +125,10 @@ public class Agent {
     }
     
     public static void main(String[] args){
-        Agent agent = new Agent("8puzzle#");
+        //Agent agent = new Agent("8puzzle#182043765#123456780");
+        //gent agent = new Agent("8puzzle#182043765#123456780");
+        Agent agent = new Agent("M&C#000133#000133");
+
 
         
     }

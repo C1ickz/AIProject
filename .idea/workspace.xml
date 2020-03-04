@@ -2,36 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="759f9c26-c695-4242-8d1e-76f05b946107" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/built-jar.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/built-jar.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/.netbeans_automatic_build" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/.netbeans_update_resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/basic_ai/MainFrame.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/basic_ai/ValidityChecker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/Action.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/Action.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/Agent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/InputParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/MCProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/MCProblem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/MainFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/MainFrame$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/MainFrame$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/MainFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/MainFrame.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/Percept.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/Problem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/QueueFIFO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/Sequence.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/package2/State.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/package2/ValidityChecker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_01_basic/MainFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_01_basic/MainFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_01_basic/MainFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_01_basic/MainFrame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_01_basic/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_01_basic/MainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_01_basic/ValidityChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_01_basic/ValidityChecker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_02_MandC/Action.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_02_MandC/Action.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_02_MandC/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_02_MandC/Agent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_02_MandC/InputParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_02_MandC/InputParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_02_MandC/MCProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_02_MandC/MCProblem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_02_MandC/MainFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_02_MandC/MainFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_02_MandC/MainFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_02_MandC/MainFrame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_02_MandC/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_02_MandC/MainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_02_MandC/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_02_MandC/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_02_MandC/Percept.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_02_MandC/Percept.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_02_MandC/Problem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_02_MandC/Problem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_02_MandC/QueueFIFO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_02_MandC/QueueFIFO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_02_MandC/Sequence.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_02_MandC/Sequence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_02_MandC/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_02_MandC/State.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_02_MandC/ValidityChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_02_MandC/ValidityChecker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_03_8puzzle/Action.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_03_8puzzle/Action.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_03_8puzzle/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_03_8puzzle/Agent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_03_8puzzle/EightPuzzleProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_03_8puzzle/EightPuzzleProblem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_03_8puzzle/InputParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_03_8puzzle/InputParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_03_8puzzle/MCProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_03_8puzzle/MCProblem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_03_8puzzle/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_03_8puzzle/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_03_8puzzle/Problem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_03_8puzzle/Problem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_03_8puzzle/QueueFIFO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_03_8puzzle/QueueFIFO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_03_8puzzle/Sequence.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_03_8puzzle/Sequence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ai_03_8puzzle/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ai_03_8puzzle/State.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/package2/MCProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/package2/MCProblem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/package2/Sequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/package2/Sequence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ai_03_8puzzle/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ai_03_8puzzle/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ai_03_8puzzle/MainFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ai_03_8puzzle/MainFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ai_03_8puzzle/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ai_03_8puzzle/MainFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +95,7 @@
       <workItem from="1581093996478" duration="583000" />
       <workItem from="1581096391823" duration="166000" />
       <workItem from="1581309362247" duration="745000" />
+      <workItem from="1583167306224" duration="51000" />
     </task>
     <servers />
   </component>
@@ -117,9 +121,10 @@
     </state>
     <state x="1056" y="589" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1581310692195" />
     <state x="693" y="420" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.1680.944@0.23.1680.944" timestamp="1581096466580" />
-    <state x="516" y="327" key="com.intellij.ide.util.TipDialog" timestamp="1581093995907">
-      <screen x="0" y="23" width="1680" height="944" />
+    <state x="516" y="326" key="com.intellij.ide.util.TipDialog" timestamp="1583167306316">
+      <screen x="0" y="23" width="1680" height="941" />
     </state>
+    <state x="516" y="326" key="com.intellij.ide.util.TipDialog/0.23.1680.941@0.23.1680.941" timestamp="1583167306316" />
     <state x="516" y="327" key="com.intellij.ide.util.TipDialog/0.23.1680.944@0.23.1680.944" timestamp="1581093995907" />
     <state x="516" y="329" key="com.intellij.ide.util.TipDialog/0.23.1680.949@0.23.1680.949" timestamp="1581092888754" />
     <state x="216" y="81" key="new project wizard" timestamp="1581094095021">
