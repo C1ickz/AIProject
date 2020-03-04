@@ -5,7 +5,10 @@
 package ai_03_8puzzle;
 
 import ai_02_MandC.*;
+import java.awt.TextArea;
 import java.util.Arrays;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 /**
  *
@@ -15,9 +18,11 @@ public class Agent {
 
     private Sequence explored = new Sequence();
     private InputParser parser = new InputParser();
+    private ValidityChecker checker = new ValidityChecker();
     State childState = null;
     Problem problem = null;
     Sequence actionsTaken;
+    private MainFrame frame;
     
 //        public Action simple_problem_solving_agent(Percept percept){
 //        state = update_state(state, percept);
@@ -33,33 +38,57 @@ public class Agent {
      * Constructor for the Agent class
      * @param originalData 
      */
-    public Agent(String originalData){
+    public Agent(String originalData) throws InterruptedException{
         State startState = new State(parser.parseInput(originalData)[0]);
         State goalState = new State(parser.parseInput(originalData)[1]);
         
         if(originalData.startsWith("M&C#")){
+            if(checker.checkMC(originalData)){
             problem = new MCProblem(startState, goalState);
             actionsTaken = bfs(problem);     
             System.out.println(actionsTaken.toString());
+            }
+            else{
+                System.out.println("Puzzle is not in the correct form");
+            }
         }
         else if(originalData.startsWith("8puzzle#")){
+            if(checker.check8puzzle(originalData)){
             problem = new EightPuzzleProblem(startState, goalState);
 
             actionsTaken = bfs(problem);
+            
+            State temp = startState;
             //print out the actions taken step by step with a thread.sleep between each step to delay
-            
-            
-         
-            System.out.println(actionsTaken.toString());
+            System.out.println("Step by step");
+            System.out.println("======================================");
+            for(int i = 0; i < actionsTaken.size(); i++){
+                System.out.println("\n");
+                State puzzle = problem.result(temp, actionsTaken.get(i));
+                temp = puzzle;
+                System.out.println(actionsTaken.get(i).toString());
+                problem.visualizePuzzle(puzzle);
+                TimeUnit.SECONDS.sleep(2);
+           }
+            }
+            else{
+                System.out.println("Puzzle is not in the right form");
+            }
         }
+        
         else{
             System.out.println("Problem not currently implemented in the ");
         }
+        
+        
+        
     }
     
-  public Sequence getSolution(){
-           return actionsTaken;     
-  }
+   
+    
+    public Sequence getSolution(){
+          return actionsTaken;     
+    }
         
 
     private Node childNode(Problem problem, Node parent, Action action){
@@ -124,10 +153,14 @@ public class Agent {
         return null;
     }
     
-    public static void main(String[] args){
-        //Agent agent = new Agent("8puzzle#182043765#123456780");
-        //gent agent = new Agent("8puzzle#182043765#123456780");
-        Agent agent = new Agent("M&C#000133#000133");
+    public static void main(String[] args) throws InterruptedException{
+        //Make sure to uncomment these before running
+        //Agent MandC1 = new Agent("M&C#331000#000133");
+        //Agent MandC2 = new Agent("M&C#331000#0002155");
+        
+        //Agent Eightpuzzle1 = new Agent("8puzzle#012345678#102345678");
+        //Agent EightPuzzle2 = new Agent("8puzzle#012345678#125348607");
+        Agent EightPuzzle3 = new Agent("8puzzle#182043765#123456780");
 
 
         

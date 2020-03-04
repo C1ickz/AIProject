@@ -77,11 +77,11 @@ public class EightPuzzleProblem extends Problem{
 
     @Override
     public List<Action> actions(State s) {
-        
-        System.out.println("=================================");
-        System.out.println("Original state");
-        visualizePuzzle(s);
-        System.out.println("---------");
+//        
+//        System.out.println("=================================");
+//        System.out.println("Original state");
+//        visualizePuzzle(s);
+//        System.out.println("---------");
         List<Action> actions = new ArrayList<>();
         int[][] puzzle = convertToArr(s);
         int row = getZeroIndex(puzzle)[0];
@@ -160,9 +160,9 @@ public class EightPuzzleProblem extends Problem{
                 original += puzzle[i][j];
             }
         }
-        System.out.println(a.toString());
-        visualizePuzzle(new State(original));
-        System.out.println("-----------");
+       // System.out.println(a.toString());
+       // visualizePuzzle(new State(original));
+       // System.out.println("-----------");
        // State original = backToOriginal(puzzle);
         return new State(original);
     }

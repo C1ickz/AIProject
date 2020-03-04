@@ -1,11 +1,12 @@
-/**
- * Ryan Harris and Aj Hammond
- * 02-03-2020
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package ai_03_8puzzle;
 
-import ai_02_MandC.*;
-import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -16,12 +17,14 @@ public class MainFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainFrame
      */
-    private ValidityChecker checker = new ValidityChecker(); //creates a validity checker object
-    
+        private String[] puzzles ={"M&C#331000#000133", "M&C#220111#000133","M&C#550111#000133","8puzzle#182043765#123456780","8puzzle#012345678#125348607"};
+
     public MainFrame() {
         initComponents();
-
         outputArea.setEditable(false);
+        for(String puzzle: puzzles){
+            cboProblems.addItem(puzzle);
+        }
 
     }
 
@@ -34,114 +37,92 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        inputField = new javax.swing.JTextField();
-        processButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         outputArea = new javax.swing.JTextArea();
-        clearText = new javax.swing.JButton();
+        btnAI = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        cboProblems = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        processButton.setText("Process text");
-        processButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                processButtonActionPerformed(evt);
-            }
-        });
 
         outputArea.setColumns(20);
         outputArea.setRows(5);
         jScrollPane1.setViewportView(outputArea);
 
-        clearText.setText("Clear");
-        clearText.addActionListener(new java.awt.event.ActionListener() {
+        btnAI.setText("AI");
+        btnAI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearTextActionPerformed(evt);
+                btnAIActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Forms of puzzles:");
+        jLabel1.setText("This ai can currently do M&C and 8puzzle");
 
-        jLabel2.setText("8puzzle#XXXXXXXXX#XXXXXXXXX ");
-
-        jLabel3.setText("M&C#XXXXXX#XXXXXX");
+        cboProblems.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboProblemsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(95, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(inputField, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(processButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(clearText, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(41, 41, 41))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(95, 95, 95)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cboProblems, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnAI, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addComponent(jLabel1)))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inputField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(processButton)
-                    .addComponent(clearText))
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                    .addComponent(btnAI)
+                    .addComponent(cboProblems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1)
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void processButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processButtonActionPerformed
-        outputArea.setText("");
-        String input = inputField.getText();
-        String returnedData= "";
-        
-        if(input.startsWith("8puzzle#")){
+    private void btnAIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAIActionPerformed
+            String inputString = outputArea.getText();
+            try {
+                Agent agent = new Agent(inputString);
+                outputArea.append("\n Check the console output");
+            } catch (InterruptedException ex) {
+                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+     
 
-        returnedData = checker.check8puzzle(input);
-        }
-        else if(input.startsWith("M&C#")){
-          returnedData = checker.checkMC(input);
 
-        }
-        outputArea.append("After processing the data the checker has determined: \n" + returnedData);
+    }//GEN-LAST:event_btnAIActionPerformed
 
-        
-        
+    private void cboProblemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboProblemsActionPerformed
+            String input = cboProblems.getSelectedItem().toString();
+            outputArea.setText(input);
+            
 
-        
-    }//GEN-LAST:event_processButtonActionPerformed
+    }//GEN-LAST:event_cboProblemsActionPerformed
 
+ 
     
-    private void clearTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearTextActionPerformed
-        // TODO add your handling code here:
-        
-        outputArea.setText("");
-    }//GEN-LAST:event_clearTextActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */
@@ -168,9 +149,6 @@ public class MainFrame extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -181,13 +159,10 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton clearText;
-    private javax.swing.JTextField inputField;
+    private javax.swing.JButton btnAI;
+    private javax.swing.JComboBox<String> cboProblems;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea outputArea;
-    private javax.swing.JButton processButton;
     // End of variables declaration//GEN-END:variables
 }

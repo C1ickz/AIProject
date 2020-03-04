@@ -22,12 +22,13 @@ public class ValidityChecker {
      * @return String to user whether or not input was valid
      */
     
-    InputParser parser = new InputParser();
-    public String check8puzzle(String input){
-        
+    private InputParser parser = new InputParser();
+    public boolean check8puzzle(String input){
+     
         //current state is first nine digits desired state is next 9 digits
         //Ex. 8puzzle#currentState#desiredState
-        String[] hash = InputParser.parseInput(input);
+        String[] hash = parser.parseInput(input);
+
         String currentState = hash[0];
         String desiredState = hash[1];
         String[] range = {"0","1","2","3","4","5","6","7","8"}; //range of numbers that can be used in 8puzzle
@@ -41,47 +42,86 @@ public class ValidityChecker {
         }
         
         // if contains = false send hint to user
-        if(contains == false || hash[0].length() != 9 || hash[1].length() != 9){
-           return "Inputted puzzle is not valid, \n \"Ex: 8puzzle#XXXXXXXXX#XXXXXXXXX. Please make sure the range of numbers is between 0 and 8 with no repeats,";
+        if(contains == false){
+            return false;
         }
         //Since boolean only has two outcomes else if is not needed
         //Return a message to the user telling them the puzzle is valid       
         else{
-           return "Inputted puzzle is valid";
+           return true;
         }
    
         
        
-        
+   
     }
     
     
     
-    public String checkMC(String input){
+    public boolean checkMC(String input){
         //Check if M&C
         //Check that it uses ints
         //Only characters 0 through 9
-        String[] hash = InputParser.parseInput(input);
+        String[] hash = parser.parseInput(input);
         String currentState = hash[0];
         String desiredState = hash[1]; 
+         String[] range = {"0","1","2","3"};
+         
+        boolean contains = false; //default value
+ 
+        //loops through each number in the range and makes sure the states both contain them
+//        for(String kw: range){
+//            if(!currentState.contains(kw) || !desiredState.contains(kw)){
+//                contains = false;
+//                break;
+//               
+//            }
+//        }
+
+      
+        
         
         try{
             Integer.parseInt(hash[0]);
             Integer.parseInt(hash[1]);
-        if(currentState.length() == 6 && desiredState.length() == 6){
-                return "The puzzle " + input + " is valid";
+            for(int i = 0; i < currentState.length(); i++){
+                int num = Integer.parseInt(""+currentState.charAt(i));
+                if(num > 3){
+                    return false;
+                 }
+                else{
+                    contains = true;
+                }
+               
             
-        }
+            }
+            for(int i = 0; i < desiredState.length(); i++){
+                int num = Integer.parseInt(""+desiredState.charAt(i));
+                if(num > 3){
+                    return false;
+                 }
+                else{
+                    contains = true;
+                }
+               
+            
+            }           
+            
+
+            if(currentState.length() == 6 && desiredState.length() == 6 && contains == true){
+                    return true;
+
+            }
   
         
    
         }
         
         catch(NumberFormatException e){
-                return "The puzzle " + input + " is not valid";
+                return false;
 
         }
-        return "The puzzle " + input + " is not valid";
+        return true;
  
     }
     
@@ -94,13 +134,16 @@ public class ValidityChecker {
 
         System.out.println(checker.checkMC("M&C#33100#000133"));
         System.out.println(checker.checkMC("M&C#123rgre100#000133"));
+        System.out.println(checker.checkMC("M&C#531000#000133"));
+
         System.out.println("=====================================\n");
         System.out.println("8puzzle");
         System.out.println(checker.check8puzzle("8puzzle#123456780#087654321"));
         System.out.println(checker.check8puzzle("8puzzle#012345687#012345678"));
         
         System.out.println(checker.check8puzzle("8puzzle#1r3456780#087654321"));
-        System.out.println(checker.check8puzzle("8puzzle#1222223456780#087654321"));
+        System.out.println(checker.check8puzzle("8puzzle#12234567#087654321"));
+
 
 
 

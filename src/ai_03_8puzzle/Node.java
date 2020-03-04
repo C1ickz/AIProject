@@ -116,6 +116,7 @@ public class Node {
         
         Node child1 = new Node(new State("310102"), root,new Action("row#02"),1);
         Node child2 = new Node(new State("3210001"), child1, new Action("row#01"),1);
+
         System.out.println(child1.toString());
         System.out.println(child2.getSolution());
  
