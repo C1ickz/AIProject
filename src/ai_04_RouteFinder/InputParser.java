@@ -51,6 +51,13 @@ public class InputParser {
             }
         }
         
+        else if (puzzle.startsWith("routeFinder#")){
+            input = puzzle.replace("routeFinder#", "").replace("#", " ");
+            inputArr = input.split(" ");
+            
+            return inputArr;
+        }
+        
         return null;
         
     }

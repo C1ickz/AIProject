@@ -200,5 +200,10 @@ public class EightPuzzleProblem extends Problem{
         eightPuzzle.visualizePuzzle(yes);
     }
 
+    @Override
+    public void setEnvironment(String data) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
   
 }

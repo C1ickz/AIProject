@@ -18,7 +18,10 @@ public class MainFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainFrame
      */
-        private String[] puzzles ={"M&C#331000#000133", "M&C#220111#000133","M&C#550111#000133","8puzzle#182043765#123456780","8puzzle#012345678#125348607"};
+        private String[] puzzles ={"M&C#331000#000133", "M&C#220111#000133","M&C#550111#000133",
+            "8puzzle#182043765#123456780","8puzzle#012345678#125348607",
+            "routeFinder#Arad#Neamt", "routeFinder#Sibiu#Giurgiu", "routeFinder#Urziceni#Neamt",
+            "routeFinder#Neamt#Arad","routeFinder#Giurgiu#Sibiu","routeFinder#Neamt#Urziceni"};
 
     public MainFrame() {
         initComponents();

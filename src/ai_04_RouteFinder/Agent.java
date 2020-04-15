@@ -77,6 +77,39 @@ public class Agent {
             }
         }
         
+        else if(originalData.startsWith("routeFinder#")){
+            problem = new RouteFinderProblem(startState, goalState);
+
+            String environment = "Oradea 71 Zerind\n" +
+                            "Oradea 151 Sibiu\n" +
+                            "Zerind 75 Arad\n" +
+                            "Arad 140 Sibiu\n" +
+                            "Arad 118 Timisoara\n" +
+                            "Timisoara 111 Lugoj\n" +
+                            "Lugoj 70 Mehadia\n" +
+                            "Mehadia 75 Drobeta\n" +
+                            "Drobeta 120 Craiova\n" +
+                            "Craiova 146 Rimnicu_Vilcea\n" +
+                            "Rimnicu_Vilcea 80 Sibiu\n" +
+                            "Craiova 138 Pitesti\n" +
+                            "Pitesti 97 Rimnicu_Vilcea\n" +
+                            "Pitesti 101 Bucharest\n" +
+                            "Sibiu 99 Fagaras\n" +
+                            "Fagaras 211 Bucharest\n" +
+                            "Bucharest 90 Giurgiu\n" +
+                            "Bucharest 85 Urziceni\n" +
+                            "Urziceni 98 Hirsova\n" +
+                            "Hirsova 86 Eforie\n" +
+                            "Urziceni 142 Vaslui\n" +
+                            "Vaslui 92 Iasi\n" +
+                            "Iasi 87 Neamt\n";
+            problem.setEnvironment(environment);
+            actionsTaken = bfs(problem);
+            System.out.println(actionsTaken.toString());
+
+            
+        }
+        
         else{
             System.out.println("Problem not currently implemented in the ");
         }
@@ -127,6 +160,8 @@ public class Agent {
                 //System.out.println(action);
 
                 child = childNode(problem, node,action);
+                
+             
 
                 if(!explored.contains(child.getState()) && !frontier.contains(child)){
                     if(problem.isGoalState(child.getState())){
@@ -161,7 +196,12 @@ public class Agent {
         
         //Agent Eightpuzzle1 = new Agent("8puzzle#012345678#102345678");
         //Agent EightPuzzle2 = new Agent("8puzzle#012345678#125348607");
-        Agent EightPuzzle3 = new Agent("8puzzle#182043765#123456780");
+        //Agent EightPuzzle3 = new Agent("8puzzle#182043765#123456780");
+        
+        Agent RouteFinder1 = new Agent("routeFinder#Arad#Neamt");
+        //Agent RouteFinder2 = new Agent("routeFinder#Sibiu#Giurgiu");
+        //Agent RouteFinder3 = new Agent("routeFinder#Urziceni#Neamt");
+                
 
 
         
